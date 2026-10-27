@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>DWTS Bingo Card 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{--bg:#eceaf2;--ink:#232842;--cell:#fff;--free:#2b3050;--freeink:#fff;--mark:#f3c9d4;--markink:#7a1f3a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16182a;--ink:#e8e9f5;--cell:#232845;--free:#e8e9f5;--freeink:#16182a;--mark:#5a2540;--markink:#f5c6d6}}
+:root[data-theme="dark"]{--bg:#16182a;--ink:#e8e9f5;--cell:#232845;--free:#e8e9f5;--freeink:#16182a;--mark:#5a2540;--markink:#f5c6d6}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Helvetica,Arial,sans-serif;padding:16px}
+h1{text-align:center;font-size:1.1rem;margin:8px 0 14px}
+.card{max-width:560px;margin:0 auto}
+.g{display:grid;grid-template-columns:repeat(5,1fr);gap:3px;aspect-ratio:1;background:var(--ink);border:3px solid var(--ink)}
+.c{background:var(--cell);color:var(--ink);border:0;margin:0;font:inherit;display:flex;align-items:center;justify-content:center;text-align:center;padding:2px;min-width:0;overflow:hidden;cursor:pointer;position:relative;-webkit-tap-highlight-color:transparent}
+.c span{font-size:clamp(6.5px,2vw,12px);font-weight:700;line-height:1.15;overflow-wrap:normal;word-break:normal;hyphens:none}
+.c:focus-visible{outline:3px solid #e0457b;outline-offset:-3px}
+.c.on{background:var(--mark);color:var(--markink)}
+.free{background:var(--free);color:var(--freeink)}
+.free b{display:block;font-size:clamp(8px,2.4vw,13px)}
+.free.on{background:var(--free);color:var(--freeink)}
+.free.on span{text-decoration:none}
+.free.on::after{display:none}
+.bar{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:.9rem}
+button.reset{font:inherit;padding:8px 14px;border:2px solid var(--ink);background:transparent;color:var(--ink);border-radius:6px;cursor:pointer}
+</style></head><body><h1>Dancing with the Stars: Horror Movie Night Bingo (Card 3)</h1>
+<div class="card"><div class="g" id="g"><button type="button" class="c"><span>All judges give same score</span></button><button type="button" class="c"><span>Derek peaks behind Alfonso</span></button><button type="button" class="c"><span>Brand product placement ad</span></button><button type="button" class="c"><span>&quot;Thanks Julianne&quot;</span></button><button type="button" class="c"><span>&quot;That is what this show is all about&quot;</span></button><button type="button" class="c"><span>A lift is called out</span></button><button type="button" class="c"><span>Shirley does a demonstration</span></button><button type="button" class="c"><span>Judge cries</span></button><button type="button" class="c"><span>Derek says &quot;my man&quot;</span></button><button type="button" class="c"><span>&quot;Thanks Alfonso&quot;</span></button><button type="button" class="c"><span>A couple recieves a 7</span></button><button type="button" class="c"><span>TikTok live promo</span></button><button type="button" class="c free" aria-label="Free space"><span><b>You get a 10!</b>FREE SPACE</span></button><button type="button" class="c"><span>DWTS Podcast mentioned</span></button><button type="button" class="c"><span>&quot;Your best dance yet&quot;</span></button><button type="button" class="c"><span>21523 is mentioned</span></button><button type="button" class="c"><span>A couple gets a perfect score</span></button><button type="button" class="c"><span>DWTS Tour promo</span></button><button type="button" class="c"><span>Crowd boo&#x27;s at judge</span></button><button type="button" class="c"><span>Wink at camera by dancer</span></button><button type="button" class="c"><span>Chaotic judges moment</span></button><button type="button" class="c"><span>Celebrity sighting in audience</span></button><button type="button" class="c"><span>Heel leads are mentioned</span></button><button type="button" class="c"><span>Someone gets spooked</span></button><button type="button" class="c"><span>Camera malfunction</span></button></div>
+<div class="bar"><span id="n">0 marked</span><button class="reset" id="r" type="button">Clear card</button></div></div>
+<script>
+(function(){
+var key="dwts-bingo-card-3",cells=[].slice.call(document.querySelectorAll(".c"));
+function load(){try{var v=localStorage.getItem(key);return v?JSON.parse(v):null}catch(e){return null}}
+function save(){try{localStorage.setItem(key,JSON.stringify(cells.map(function(c){return c.classList.contains("on")?1:0})))}catch(e){}}
+function count(){document.getElementById("n").textContent=cells.filter(function(c){return c.classList.contains("on")&&!c.classList.contains("free")}).length+" marked"}
+var s=load();
+cells.forEach(function(c,i){if(s&&s[i]===1)c.classList.add("on");c.setAttribute("aria-pressed",c.classList.contains("on"));
+c.addEventListener("click",function(){var on=c.classList.toggle("on");c.setAttribute("aria-pressed",on);save();count()})});
+document.getElementById("r").addEventListener("click",function(){cells.forEach(function(c){c.classList.remove("on");c.setAttribute("aria-pressed","false")});save();count()});
+count();
+})();
+</script></body></html>
